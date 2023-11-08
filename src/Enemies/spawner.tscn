@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2fkm4okjmlmb"]
+
+[ext_resource type="Script" path="res://src/Enemies/Spawner.gd" id="1_hb055"]
+[ext_resource type="PackedScene" uid="uid://1ryedrf12r17" path="res://src/Enemies/badfish.tscn" id="2_iuydn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tq2p"]
+size = Vector2(134, 573)
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_hb055")
+mob_scene = ExtResource("2_iuydn")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_5tq2p")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

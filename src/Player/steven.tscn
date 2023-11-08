@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://djkdm2yb64ss4"]
+
+[ext_resource type="Texture2D" uid="uid://80nw0rbg6fcs" path="res://assets/art/fishTile_081.png" id="1_bvaey"]
+[ext_resource type="Script" path="res://src/Player/steven.gd" id="1_mfkg0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fxg45"]
+radius = 8.0
+height = 44.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ih3yo"]
+radius = 13.0
+height = 54.0
+
+[node name="Steven" type="CharacterBody2D" groups=["steven"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_mfkg0")
+
+[node name="StevenSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_bvaey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fxg45")
+
+[node name="BodyArea" type="Area2D" parent="." groups=["player"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ih3yo")
+
+[connection signal="area_entered" from="BodyArea" to="." method="_on_body_area_entered"]

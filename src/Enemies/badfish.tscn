@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://1ryedrf12r17"]
+
+[ext_resource type="Script" path="res://src/Enemies/badfish.gd" id="1_5o40r"]
+[ext_resource type="Texture2D" uid="uid://8cw4ryuwckp3" path="res://assets/art/fishTilesheet.png" id="1_liqw2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7m7f5"]
+radius = 13.0
+height = 50.0
+
+[node name="Badfish" type="Area2D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_5o40r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_liqw2")
+region_enabled = true
+region_rect = Rect2(256, 256, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7m7f5")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
