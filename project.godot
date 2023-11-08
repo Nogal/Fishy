@@ -24,6 +24,15 @@ SceneManager="*res://src/Game/scene_manager.tscn"
 
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/github_to_itch/plugin.cfg")
+
+[github_to_itch]
+
+config/itch_username="itchy_nogal"
+config/itch_project_name="fishy"
+
 [input]
 
 move_up={
