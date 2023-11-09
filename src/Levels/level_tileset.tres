@@ -1,9 +1,11 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://chvosbfmhn68f"]
 
-[ext_resource type="Texture2D" uid="uid://8cw4ryuwckp3" path="res://assets/art/fishTilesheet.png" id="1_r41ef"]
+[ext_resource type="Texture2D" uid="uid://bybqr876fm8l0" path="res://assets/art/fishPack_vector.svg" id="1_nlgp5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nq0m"]
-texture = ExtResource("1_r41ef")
+texture = ExtResource("1_nlgp5")
+margins = Vector2i(32, 32)
+separation = Vector2i(32, 32)
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
