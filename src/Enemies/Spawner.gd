@@ -15,7 +15,7 @@ func _process(delta):
 
 
 func _on_timer_timeout():
-	print("spawn")
+	print("spawning")
 
 	var mob = mob_scene.instantiate()
 	

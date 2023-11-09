@@ -8,6 +8,7 @@ const export_template_path:String = "res://addons/github_to_itch/tempaltes/expor
 
 const ITCH_CHANNEL_MAP = {
 	"HTML5": "web",
+	"Web": "web",
 	"Windows Desktop": "win",
 	"Android": "android",
 	"iOS": "ios", # not an official channel of itch
@@ -86,6 +87,8 @@ func exports() -> String:
 	
 	return "".join(res)
 
+
+
 func uploads() -> String:
 	var exports = get_exports()
 	var ITCH_USERNAME = ProjectSettings.get_setting("github_to_itch/config/itch_username")
@@ -100,7 +103,6 @@ func uploads() -> String:
 			ITCH_USERNAME = ITCH_USERNAME.to_lower(),
 			ITCH_PROJECT_NAME = ITCH_PROJECT_NAME.to_lower()
 		}))
-	
 	return "".join(res)
 
 func workflow() -> String:
