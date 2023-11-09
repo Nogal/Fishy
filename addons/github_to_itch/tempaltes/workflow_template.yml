@@ -29,6 +29,8 @@ jobs:
   runs-on: ubuntu-latest
   steps:
   - uses: actions/checkout@v2
+	with:
+		lfs: true
   
   - name: Download + Authorize Godot
 	run: |
@@ -60,6 +62,8 @@ jobs:
   runs-on: ubuntu-latest
   steps:
 	- uses: actions/checkout@v2
+	  with:
+		lfs: true
    
 	- name: Version
 	  id: tag_version
