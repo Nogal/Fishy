@@ -51,7 +51,7 @@ jobs:
   - name: Export Web
     run: |
      mkdir -p ./exports
-     ./godot --headless --path ./ --export-release "Web" ./exports/Fishy.html
+     ./godot --headless --path ./ --export-release "Web" ./exports/index.html
     
 
   - uses: actions/upload-artifact@v2
