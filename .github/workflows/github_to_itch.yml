@@ -133,6 +133,9 @@ jobs:
     - name: Login To Butler
       run: ./butler login
     
+    - name: Push Web to Itch
+      run: ./butler push ./exports itchy_nogal/fishy:web --userversion-file ./VERSION/VERSION.txt
+    
 
  Cleanup:
   needs: [Export, Release, Publish]
