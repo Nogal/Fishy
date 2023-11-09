@@ -3,10 +3,10 @@ name: Publish Fishy to Itch.io
 on:
  push:
   branches:
-  - master
+  - main
  pull_request:
   branches:
-  - master
+  - main
 env:
  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }} # Needs to be added through github
  DISCORD_WEBHOOK: ${{secrets.DISCORD_WEBHOOK}} # Needs to be added through github
@@ -61,7 +61,7 @@ jobs:
   
  Release:
   needs: Export
-  if: ${{ contains(github.ref, 'master') }}
+  if: ${{ contains(github.ref, 'main') }}
   runs-on: ubuntu-latest
   steps:
     - uses: actions/checkout@v2
