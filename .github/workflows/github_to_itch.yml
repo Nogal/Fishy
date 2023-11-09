@@ -58,7 +58,12 @@ jobs:
   - name: Export Linux/X11
     run: |
      mkdir -p ./exports
-     ./godot --headless --path ./ --export-release "Linux/X11" ./exports/index.x86_64
+     ./godot --headless --path ./ --export-release "Linux/X11" ./exports/fishy.x86_64
+    
+  - name: Export Windows Desktop
+    run: |
+     mkdir -p ./exports
+     ./godot --headless --path ./ --export-release "Windows Desktop" ./exports/fishy.exe
     
 
   - uses: actions/upload-artifact@v2
@@ -147,6 +152,9 @@ jobs:
     
     - name: Push Linux/X11 to Itch
       run: ./butler push ./exports itchy-nogal/fishy:linux --userversion-file ./VERSION/VERSION.txt
+    
+    - name: Push Windows Desktop to Itch
+      run: ./butler push ./exports itchy-nogal/fishy:win --userversion-file ./VERSION/VERSION.txt
     
 
  Cleanup:
