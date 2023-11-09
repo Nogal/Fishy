@@ -11,7 +11,7 @@ env:
  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }} # Needs to be added through github
  DISCORD_WEBHOOK: ${{secrets.DISCORD_WEBHOOK}} # Needs to be added through github
  GITHUB_TOKEN: ${{ secrets.TOKEN }}
- IS_MAIN: ${{ contains(github.ref, 'master') }}
+ IS_MAIN: ${{ contains(github.ref, 'main') }}
  PROJECT_NAME: "Fishy"
 
 jobs:
@@ -48,6 +48,11 @@ jobs:
      mkdir -p ~/.local/share/godot/export_templates/4.1.3.stable
      mv ./templates/* ~/.local/share/godot/export_templates/4.1.3.stable
   
+  - name: Export Web
+    run: |
+     mkdir -p ./
+     ./godot --headless --path ./ --export-release "Web" ./
+    
 
   - uses: actions/upload-artifact@v2
     with:
@@ -113,7 +118,7 @@ jobs:
  
  Publish:
   needs: Release
-  if: ${{ contains(github.ref, 'master') }}
+  if: ${{ contains(github.ref, 'main') }}
   runs-on: ubuntu-latest
   steps:
     - uses: actions/download-artifact@v2
