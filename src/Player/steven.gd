@@ -64,9 +64,8 @@ func die():
 	SceneManager.change_scene("res://src/menu/main_menu.tscn")
 
 func _on_body_area_entered(area):
-	print("Hello, ", area.name, " you are ", area.size(), " and i am ", self.scale)
 	if area.size() > self.scale:
 		die()
 	else:
 		grow_steven_grow()
-	pass # Replace with function body.
+

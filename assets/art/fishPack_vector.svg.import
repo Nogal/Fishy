@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://80nw0rbg6fcs"
-path="res://.godot/imported/fishTile_081.png-de75bfc86689176ef78a3f8b42ee6791.ctex"
+uid="uid://bybqr876fm8l0"
+path="res://.godot/imported/fishPack_vector.svg-4cc2982c329d76ee8a82fd147aa7c379.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/fishTile_081.png"
-dest_files=["res://.godot/imported/fishTile_081.png-de75bfc86689176ef78a3f8b42ee6791.ctex"]
+source_file="res://assets/art/fishPack_vector.svg"
+dest_files=["res://.godot/imported/fishPack_vector.svg-4cc2982c329d76ee8a82fd147aa7c379.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

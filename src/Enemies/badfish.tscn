@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://1ryedrf12r17"]
 
 [ext_resource type="Script" path="res://src/Enemies/badfish.gd" id="1_5o40r"]
-[ext_resource type="Texture2D" uid="uid://8cw4ryuwckp3" path="res://assets/art/fishTilesheet.png" id="1_liqw2"]
+[ext_resource type="Texture2D" uid="uid://bybqr876fm8l0" path="res://assets/art/fishPack_vector.svg" id="2_7xlxh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7m7f5"]
 radius = 13.0
@@ -13,9 +13,13 @@ collision_mask = 2
 script = ExtResource("1_5o40r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_liqw2")
-region_enabled = true
-region_rect = Rect2(256, 256, 64, 64)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_7xlxh")
+offset = Vector2(-3, 2)
+hframes = 18
+vframes = 7
+frame = 77
+region_rect = Rect2(416, 416, 512, 512)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
