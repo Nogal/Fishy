@@ -53,6 +53,11 @@ jobs:
      mkdir -p ./exports
      ./godot --headless --path ./ --export-release "Web" ./exports/index.html
     
+  - name: Export Linux/X11
+    run: |
+     mkdir -p ./exports
+     ./godot --headless --path ./ --export-release "Linux/X11" ./exports/index.x86_64
+    
 
   - uses: actions/upload-artifact@v2
     with:
@@ -135,6 +140,9 @@ jobs:
     
     - name: Push Web to Itch
       run: ./butler push ./exports itchy-nogal/fishy:web --userversion-file ./VERSION/VERSION.txt
+    
+    - name: Push Linux/X11 to Itch
+      run: ./butler push ./exports itchy-nogal/fishy:linux --userversion-file ./VERSION/VERSION.txt
     
 
  Cleanup:
