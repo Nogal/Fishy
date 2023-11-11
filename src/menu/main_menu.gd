@@ -3,7 +3,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	update_language()
+	#update_language()
+	pass
 
 
 func _process(delta):
