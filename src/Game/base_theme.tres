@@ -23,6 +23,7 @@ texture = ExtResource("1_bv2ol")
 region_rect = Rect2(358, 121, 190, 49)
 
 [resource]
+Button/colors/font_color = Color(0.431373, 0.247059, 0.0470588, 1)
 Button/styles/disabled = SubResource("StyleBoxTexture_q66qv")
 Button/styles/focus = SubResource("StyleBoxTexture_r8x8x")
 Button/styles/hover = SubResource("StyleBoxTexture_1km2l")

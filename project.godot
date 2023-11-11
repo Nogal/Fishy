@@ -64,6 +64,12 @@ move_left={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://locale/locale.en_US.translation", "res://locale/locale.jp.translation")
+locale/include_text_server_data=true
+locale/fallback="en_US"
+
 [layer_names]
 
 2d_physics/layer_2="Enemy"

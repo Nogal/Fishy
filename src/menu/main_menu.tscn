@@ -25,29 +25,38 @@ layer_0/tile_data = PackedInt32Array(65536, 1114112, 4, 131072, 1114112, 4, 1966
 
 [node name="Start" type="Button" parent="."]
 offset_left = 320.0
-offset_top = 384.0
+offset_top = 320.0
 offset_right = 510.0
-offset_bottom = 448.0
+offset_bottom = 384.0
 theme = ExtResource("3_jblh3")
-text = "Start"
+text = "KEY_START"
 
 [node name="Exit" type="Button" parent="."]
 offset_left = 640.0
-offset_top = 384.0
+offset_top = 320.0
 offset_right = 832.0
-offset_bottom = 448.0
-text = "Exit
+offset_bottom = 384.0
+theme = ExtResource("3_jblh3")
+text = "KEY_EXIT
 "
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 328.0
-offset_top = 240.0
-offset_right = 840.0
-offset_bottom = 320.0
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 832.0
+offset_bottom = 216.0
 theme = ExtResource("3_jblh3")
 bbcode_enabled = true
 text = "[center][wave] [rainbow freq=.2 sat=0.8 val=0.9 ]FISHY"
 fit_content = true
 
+[node name="Language" type="Button" parent="."]
+offset_left = 480.0
+offset_top = 448.0
+offset_right = 672.0
+offset_bottom = 511.0
+text = "KEY_LANGUAGE"
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Language" to="." method="_on_language_pressed"]
