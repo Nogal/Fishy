@@ -7,11 +7,15 @@ const FRICTION = 250
 var direction = "right"
 var input = Vector2.ZERO
 
+var dead = false
+
 @onready var screen_size = get_viewport_rect().size
 
 @onready var number_eaten = 0
 
 signal eat_counter_increased
+signal steven_died
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.scale = self.scale * 0.5
@@ -38,7 +42,8 @@ func _physics_process(delta):
 	player_movement(delta)
 
 func player_movement(delta):
-	input = get_input()
+	if not dead:
+		input = get_input()
 	
 	if input == Vector2.ZERO:
 		if velocity.length() > (FRICTION * delta):
@@ -54,6 +59,9 @@ func player_movement(delta):
 	if input.x < 0 and get_node("StevenSprite").is_flipped_h() == false:
 		get_node("StevenSprite").set_flip_h(true)
 
+	if dead:
+		velocity = Vector2.ZERO
+		
 	move_and_slide()
 
 func get_input():
@@ -62,12 +70,18 @@ func get_input():
 	return input.normalized()
 
 func die():
+	dead = true
+	get_node("StevenSprite").set_flip_v(true)
 	MusicPlayer.queue_song(1)
+	get_node("DieSound").play()
+	get_tree().paused = true
+	steven_died.emit()
 	SceneManager.change_scene("res://src/menu/main_menu.tscn")
 
 func _on_body_area_entered(area):
-	if area.size() > self.scale:
-		die()
-	else:
-		grow_steven_grow()
+	if not dead:
+		if area.size() > self.scale:
+			die()
+		else:
+			grow_steven_grow()
 

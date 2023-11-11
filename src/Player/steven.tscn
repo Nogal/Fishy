@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://djkdm2yb64ss4"]
+[gd_scene load_steps=7 format=3 uid="uid://djkdm2yb64ss4"]
 
 [ext_resource type="Script" path="res://src/Player/steven.gd" id="1_mfkg0"]
 [ext_resource type="Texture2D" uid="uid://bybqr876fm8l0" path="res://assets/art/fishPack_vector.svg" id="2_f8ojf"]
 [ext_resource type="AudioStream" uid="uid://pyuqtlc2pc0s" path="res://assets/sfx/eating-sound-effect-36186.mp3" id="3_todop"]
+[ext_resource type="AudioStream" uid="uid://cbul2saq2sblr" path="res://assets/sfx/splash.wav" id="4_kkwhg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fxg45"]
 radius = 8.0
@@ -38,5 +39,9 @@ shape = SubResource("CapsuleShape2D_ih3yo")
 
 [node name="Burp" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_todop")
+
+[node name="DieSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("4_kkwhg")
 
 [connection signal="area_entered" from="BodyArea" to="." method="_on_body_area_entered"]

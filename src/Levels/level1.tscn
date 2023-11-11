@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3p25spu1ftcv"]
+[gd_scene load_steps=6 format=3 uid="uid://b3p25spu1ftcv"]
 
 [ext_resource type="TileSet" uid="uid://chvosbfmhn68f" path="res://src/Levels/level_tileset.tres" id="1_sheck"]
 [ext_resource type="PackedScene" uid="uid://d2gfyw8jpq0xb" path="res://src/Game/bones_display.tscn" id="2_2uunh"]
 [ext_resource type="PackedScene" uid="uid://djkdm2yb64ss4" path="res://src/Player/steven.tscn" id="2_xfg7s"]
 [ext_resource type="PackedScene" uid="uid://d2fkm4okjmlmb" path="res://src/Enemies/spawner.tscn" id="5_2nq7k"]
+[ext_resource type="PackedScene" uid="uid://bd05037eytelx" path="res://src/menu/death_menu.tscn" id="5_eumyr"]
 
 [node name="Level1" type="Node2D"]
 
@@ -32,4 +33,7 @@ position = Vector2(-100, 305)
 [node name="Spawner2" parent="." instance=ExtResource("5_2nq7k")]
 position = Vector2(1249, 300)
 
+[node name="DeathMenu" parent="." instance=ExtResource("5_eumyr")]
+
 [connection signal="eat_counter_increased" from="Steven" to="BonesDisplay" method="_on_steven_eat_counter_increased"]
+[connection signal="steven_died" from="Steven" to="DeathMenu" method="_on_steven_died"]

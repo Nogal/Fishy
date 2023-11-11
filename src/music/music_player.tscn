@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://src/music/MusicPlayer.gd" id="2_tppjg"]
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D"]
+process_mode = 3
 stream = ExtResource("1_8kvy4")
 autoplay = true
 script = ExtResource("2_tppjg")
