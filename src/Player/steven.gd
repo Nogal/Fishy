@@ -16,6 +16,7 @@ func _ready():
 
 func grow_steven_grow():
 	var tween = get_tree().create_tween()
+	get_node("Burp").play()
 	if (int(self.scale.x * 10) + 1) % 5 == 0:
 		MusicPlayer._song_go_up()
 	self.scale += Vector2(0.05, 0.05)
