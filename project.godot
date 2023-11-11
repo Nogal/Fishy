@@ -33,6 +33,10 @@ enabled=PackedStringArray("res://addons/github_to_itch/plugin.cfg")
 config/itch_username="itchy-nogal"
 config/itch_project_name="fishy"
 
+[gui]
+
+theme/custom="res://src/Game/base_theme.tres"
+
 [input]
 
 move_up={
