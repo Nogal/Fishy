@@ -4,7 +4,7 @@ const MIN_SPEED = 10
 const MAX_SPEED = 100
 
 const MIN_SIZE = 0.1
-const MAX_SIZE = 2.0
+const MAX_SIZE = 4.0
 
 #var poop = 'poop'
 

@@ -18,7 +18,7 @@ func grow_steven_grow():
 	var tween = get_tree().create_tween()
 	if (int(self.scale.x * 10) + 1) % 5 == 0:
 		MusicPlayer._song_go_up()
-	self.scale += Vector2(0.1, 0.1)
+	self.scale += Vector2(0.05, 0.05)
 	tween.tween_property($StevenSprite, "scale", Vector2(1.2, 1.2), 0.15).set_trans(Tween.TRANS_SINE)
 	tween.tween_property($StevenSprite, "scale", Vector2(1, 1), 0.15).set_trans(Tween.TRANS_SINE)
 	
