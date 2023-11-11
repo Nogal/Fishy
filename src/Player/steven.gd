@@ -33,9 +33,6 @@ func _physics_process(delta):
 func player_movement(delta):
 	input = get_input()
 	
-	if Input.is_action_just_released("grow_debug"):
-		grow_steven_grow()
-	
 	if input == Vector2.ZERO:
 		if velocity.length() > (FRICTION * delta):
 			velocity -= velocity.normalized() * (FRICTION * delta)
