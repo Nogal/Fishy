@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b8r3kfpe6xmu4"]
+
+[ext_resource type="Texture2D" uid="uid://kcpw3h04nvx0" path="res://assets/art/uipack_rpg_vector.svg" id="1_bv2ol"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q66qv"]
+texture = ExtResource("1_bv2ol")
+region_rect = Rect2(358, 121, 190, 49)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8x8x"]
+texture = ExtResource("1_bv2ol")
+region_rect = Rect2(358, 121, 190, 49)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1km2l"]
+texture = ExtResource("1_bv2ol")
+region_rect = Rect2(358, 121, 190, 49)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wrf56"]
+texture = ExtResource("1_bv2ol")
+region_rect = Rect2(358, 121, 190, 49)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u5kn5"]
+texture = ExtResource("1_bv2ol")
+region_rect = Rect2(358, 121, 190, 49)
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_q66qv")
+Button/styles/focus = SubResource("StyleBoxTexture_r8x8x")
+Button/styles/hover = SubResource("StyleBoxTexture_1km2l")
+Button/styles/normal = SubResource("StyleBoxTexture_wrf56")
+Button/styles/pressed = SubResource("StyleBoxTexture_u5kn5")
+RichTextLabel/font_sizes/bold_font_size = 21
+RichTextLabel/font_sizes/normal_font_size = 64
