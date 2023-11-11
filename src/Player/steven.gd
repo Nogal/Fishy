@@ -9,16 +9,22 @@ var input = Vector2.ZERO
 
 @onready var screen_size = get_viewport_rect().size
 
+@onready var number_eaten = 0
+
+signal eat_counter_increased
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.scale = self.scale * 0.5
 
 
 func grow_steven_grow():
+	number_eaten += 1
 	var tween = get_tree().create_tween()
 	get_node("Burp").play()
-	if (int(self.scale.x * 10) + 1) % 5 == 0:
+	if number_eaten % 5 == 0:
+	#if (int(self.scale.x * 10) + 1) % 5 == 0:
 		MusicPlayer._song_go_up()
+	eat_counter_increased.emit(number_eaten)
 	self.scale += Vector2(0.05, 0.05)
 	tween.tween_property($StevenSprite, "scale", Vector2(1.2, 1.2), 0.15).set_trans(Tween.TRANS_SINE)
 	tween.tween_property($StevenSprite, "scale", Vector2(1, 1), 0.15).set_trans(Tween.TRANS_SINE)
@@ -48,8 +54,6 @@ func player_movement(delta):
 	if input.x < 0 and get_node("StevenSprite").is_flipped_h() == false:
 		get_node("StevenSprite").set_flip_h(true)
 
-
-	
 	move_and_slide()
 
 func get_input():

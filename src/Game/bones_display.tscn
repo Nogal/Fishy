@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2gfyw8jpq0xb"]
+
+[ext_resource type="Script" path="res://src/Game/bones_display.gd" id="1_7tdnf"]
+[ext_resource type="Texture2D" uid="uid://bsxoucpvrac5h" path="res://assets/art/big_fishbones.png" id="1_ir0v5"]
+[ext_resource type="Texture2D" uid="uid://dr0dkoat4qsky" path="res://assets/art/little_fishbones.png" id="2_vn0ap"]
+
+[node name="BonesDisplay" type="Node2D"]
+z_index = 1
+script = ExtResource("1_7tdnf")
+
+[node name="BigBones0" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("1_ir0v5")
+
+[node name="BigBones1" type="Sprite2D" parent="."]
+position = Vector2(96, 32)
+texture = ExtResource("1_ir0v5")
+
+[node name="BigBones2" type="Sprite2D" parent="."]
+position = Vector2(160, 32)
+texture = ExtResource("1_ir0v5")
+
+[node name="BigBones3" type="Sprite2D" parent="."]
+position = Vector2(224, 32)
+texture = ExtResource("1_ir0v5")
+
+[node name="BigBones4" type="Sprite2D" parent="."]
+position = Vector2(288, 32)
+texture = ExtResource("1_ir0v5")
+
+[node name="LittleBones0" type="Sprite2D" parent="."]
+position = Vector2(32, 96)
+texture = ExtResource("2_vn0ap")
+
+[node name="LittleBones1" type="Sprite2D" parent="."]
+position = Vector2(96, 96)
+texture = ExtResource("2_vn0ap")
+
+[node name="LittleBones2" type="Sprite2D" parent="."]
+position = Vector2(160, 96)
+texture = ExtResource("2_vn0ap")
+
+[node name="LittleBones3" type="Sprite2D" parent="."]
+position = Vector2(224, 96)
+texture = ExtResource("2_vn0ap")
+
+[node name="LittleBones4" type="Sprite2D" parent="."]
+position = Vector2(288, 96)
+texture = ExtResource("2_vn0ap")

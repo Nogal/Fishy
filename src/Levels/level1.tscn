@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3p25spu1ftcv"]
+[gd_scene load_steps=5 format=3 uid="uid://b3p25spu1ftcv"]
 
 [ext_resource type="TileSet" uid="uid://chvosbfmhn68f" path="res://src/Levels/level_tileset.tres" id="1_sheck"]
+[ext_resource type="PackedScene" uid="uid://d2gfyw8jpq0xb" path="res://src/Game/bones_display.tscn" id="2_2uunh"]
 [ext_resource type="PackedScene" uid="uid://djkdm2yb64ss4" path="res://src/Player/steven.tscn" id="2_xfg7s"]
 [ext_resource type="PackedScene" uid="uid://d2fkm4okjmlmb" path="res://src/Enemies/spawner.tscn" id="5_2nq7k"]
 
@@ -20,6 +21,8 @@ tile_set = ExtResource("1_sheck")
 format = 2
 layer_0/tile_data = PackedInt32Array(589824, 131072, 0, 589825, 196608, 0, 589826, 131072, 0, 589827, 196608, 0, 589828, 393216, 0, 589829, 458752, 0, 589830, 524288, 0, 589831, 196608, 0, 589832, 131072, 0, 589833, 196608, 0, 589834, 131072, 0, 589835, 196608, 0, 589836, 393216, 0, 589837, 458752, 0, 589838, 524288, 0, 589839, 589824, 0, 589840, 131072, 0, 589841, 589824, 0, 524301, 851968, 2, 524294, 720896, 2, 524305, 1114112, 2)
 
+[node name="BonesDisplay" parent="." instance=ExtResource("2_2uunh")]
+
 [node name="Steven" parent="." instance=ExtResource("2_xfg7s")]
 position = Vector2(557, 304)
 
@@ -28,3 +31,5 @@ position = Vector2(-100, 305)
 
 [node name="Spawner2" parent="." instance=ExtResource("5_2nq7k")]
 position = Vector2(1249, 300)
+
+[connection signal="eat_counter_increased" from="Steven" to="BonesDisplay" method="_on_steven_eat_counter_increased"]
