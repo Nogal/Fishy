@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd05037eytelx"]
+
+[ext_resource type="Script" path="res://src/menu/death_menu.gd" id="1_5cq1b"]
+
+[node name="DeathMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_5cq1b")
+
+[node name="Retry" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 448.0
+offset_right = 448.0
+offset_bottom = 512.0
+text = "KEY_RETRY"
+
+[node name="Menu" type="Button" parent="."]
+offset_left = 704.0
+offset_top = 448.0
+offset_right = 896.0
+offset_bottom = 512.0
+text = "KEY_MENU"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
