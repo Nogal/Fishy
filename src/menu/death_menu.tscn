@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd05037eytelx"]
+[gd_scene load_steps=3 format=3 uid="uid://bd05037eytelx"]
 
 [ext_resource type="Script" path="res://src/menu/death_menu.gd" id="1_5cq1b"]
+[ext_resource type="Theme" uid="uid://b8r3kfpe6xmu4" path="res://src/Game/base_theme.tres" id="2_30e7l"]
 
 [node name="DeathMenu" type="CanvasLayer"]
 process_mode = 3
@@ -25,6 +26,7 @@ offset_left = 320.0
 offset_top = 128.0
 offset_right = 832.0
 offset_bottom = 256.0
+theme = ExtResource("2_30e7l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
