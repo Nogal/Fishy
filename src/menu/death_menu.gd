@@ -13,6 +13,7 @@ func _process(delta):
 
 
 func _on_steven_died():
+	get_node("Message").set_text(tr('KEY_DEATH'))
 	self.visible = true
 	pass # Replace with function body.
 
@@ -29,3 +30,10 @@ func _on_retry_pressed():
 func _on_menu_pressed():
 	unpause()
 	SceneManager.change_scene("res://src/menu/main_menu.tscn")
+
+
+func _on_steven_steven_too_big():
+	get_node("Message").set_text(tr('KEY_TOO_BIG'))
+	get_tree().paused = true
+	self.visible = true
+	pass # Replace with function body.
