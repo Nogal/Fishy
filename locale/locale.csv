@@ -5,3 +5,5 @@ KEY_EXIT,Exit,終了
 KEY_LANGUAGE,日本語,English
 KEY_MENU,Menu,メニュー
 KEY_RETRY,Retry,リトライ
+KEY_DEATH,You've been eaten!,食べられちゃった！
+KEY_TOO_BIG,You're too big for the ecosystem!,生態系にはでかすぎるよ！

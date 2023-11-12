@@ -38,12 +38,10 @@ func _process(delta):
 
 func _on_area_entered(area):
 	if area.is_in_group("player"):
-		print("I am dead!")
 		queue_free()
 	pass # Replace with function body.
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	print("I have traveled to the nether!")
 	queue_free()
 	pass # Replace with function body.

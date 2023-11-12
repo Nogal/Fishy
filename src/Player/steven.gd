@@ -15,30 +15,30 @@ var dead = false
 
 signal eat_counter_increased
 signal steven_died
+signal steven_too_big
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self.scale = self.scale * 0.5
-
 
 func grow_steven_grow():
 	number_eaten += 1
 	var tween = get_tree().create_tween()
 	get_node("Burp").play()
 	if number_eaten % 5 == 0:
-	#if (int(self.scale.x * 10) + 1) % 5 == 0:
 		MusicPlayer._song_go_up()
 	eat_counter_increased.emit(number_eaten)
 	self.scale += Vector2(0.05, 0.05)
 	tween.tween_property($StevenSprite, "scale", Vector2(1.2, 1.2), 0.15).set_trans(Tween.TRANS_SINE)
 	tween.tween_property($StevenSprite, "scale", Vector2(1, 1), 0.15).set_trans(Tween.TRANS_SINE)
+	if self.scale > Vector2(6.0, 6.0):
+		steven_too_big.emit()
+		MusicPlayer.queue_song(1)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-
 	position.x = wrapf(position.x, 0, screen_size.x)
-	#position.y = wrapf(position.y, 0, screen_size.y)
 	player_movement(delta)
 
 func player_movement(delta):

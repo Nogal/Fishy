@@ -49,3 +49,4 @@ position = Vector2(1248, 480)
 
 [connection signal="eat_counter_increased" from="Steven" to="BonesDisplay" method="_on_steven_eat_counter_increased"]
 [connection signal="steven_died" from="Steven" to="DeathMenu" method="_on_steven_died"]
+[connection signal="steven_too_big" from="Steven" to="DeathMenu" method="_on_steven_steven_too_big"]

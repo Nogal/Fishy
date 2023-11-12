@@ -15,8 +15,6 @@ func _process(delta):
 
 
 func _on_timer_timeout():
-	print("spawning")
-
 	var mob = mob_scene.instantiate()
 	
 	var extents = get_node("Area2D/CollisionShape2D").shape.extents
@@ -26,7 +24,7 @@ func _on_timer_timeout():
 
 	mob_position.x = (randi() % int(round(extents.x))) - (extents.x/2) + center.x
 	mob_position.y = (randi() % int(round(extents.y))) - (extents.y/2) + center.y
-	print(mob_position)
+
 	mob.position = mob_position
 	add_child(mob)
 	get_node("Timer").set_wait_time(random_time)

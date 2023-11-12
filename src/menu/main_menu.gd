@@ -21,7 +21,7 @@ func _on_exit_pressed():
 
 func update_language():
 	get_node("Start").set_text(tr("KEY_START"))
-	get_node("RichTextLabel").text = "[center][wave] [rainbow freq=.2 sat=0.8 val=0.9 ]" + tr("KEY_TITLE")
+	get_node("RichTextLabel").text = "[center][wave amp=100.0] [rainbow freq=.2 sat=0.8 val=0.9 ]" + tr("KEY_TITLE")
 	get_node("Exit").set_text(tr("KEY_EXIT"))
 	get_node("Language").set_text(tr("KEY_LANGUAGE"))
 
