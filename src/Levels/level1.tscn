@@ -28,10 +28,22 @@ layer_0/tile_data = PackedInt32Array(589824, 131072, 0, 589825, 196608, 0, 58982
 position = Vector2(557, 304)
 
 [node name="Spawner" parent="." instance=ExtResource("5_2nq7k")]
-position = Vector2(-100, 305)
+position = Vector2(-96, 88)
 
 [node name="Spawner2" parent="." instance=ExtResource("5_2nq7k")]
-position = Vector2(1249, 300)
+position = Vector2(-96, 280)
+
+[node name="Spawner3" parent="." instance=ExtResource("5_2nq7k")]
+position = Vector2(-96, 480)
+
+[node name="Spawner4" parent="." instance=ExtResource("5_2nq7k")]
+position = Vector2(1248, 88)
+
+[node name="Spawner5" parent="." instance=ExtResource("5_2nq7k")]
+position = Vector2(1248, 280)
+
+[node name="Spawner6" parent="." instance=ExtResource("5_2nq7k")]
+position = Vector2(1248, 480)
 
 [node name="DeathMenu" parent="." instance=ExtResource("5_eumyr")]
 

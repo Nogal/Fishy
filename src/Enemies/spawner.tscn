@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://1ryedrf12r17" path="res://src/Enemies/badfish.tscn" id="2_iuydn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tq2p"]
-size = Vector2(134, 573)
+size = Vector2(128, 180)
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_hb055")
@@ -21,6 +21,7 @@ shape = SubResource("RectangleShape2D_5tq2p")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
